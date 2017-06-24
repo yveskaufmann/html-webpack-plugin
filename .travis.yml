@@ -6,7 +6,7 @@ node_js:
 env:
   - WEBPACK_VERSION=1 EXTRACT_TEXT_VERSION=$WEBPACK_VERSION
   - WEBPACK_VERSION=2 EXTRACT_TEXT_VERSION=$WEBPACK_VERSION
-  - WEBPACK_VERSION=3 EXTRACT_TEXT_VERSION=^2.1.2
+  - WEBPACK_VERSION=3 EXTRACT_TEXT_VERSION=^3.0.0-beta.3
 before_install:
   - stty columns 120
 install:
@@ -15,5 +15,6 @@ install:
   - npm rm extract-text-webpack-plugin
   - npm install webpack@$WEBPACK_VERSION --ignore-scripts
   - npm install extract-text-webpack-plugin@$EXTRACT_TEXT_VERSION --ignore-scripts
+  - npm run build-examples
 script:
   - npm test

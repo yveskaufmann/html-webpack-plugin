@@ -64,7 +64,7 @@ function testHtmlPlugin (webpackConfig, expectedResults, outputFile, done, expec
     if (!outputFileExists) {
       return done();
     }
-    var htmlContent = fs.readFileSync(path.join(OUTPUT_DIR, outputFile)).toString();
+    var htmlContent = fs.readFileSync(path.join(OUTPUT_DIR, outputFile)).toString().replace(/(\r\n|\r)/g, '\n');
     var chunksInfo;
     for (var i = 0; i < expectedResults.length; i++) {
       var expectedResult = expectedResults[i];
